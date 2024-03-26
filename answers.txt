@@ -4,5 +4,8 @@ Problem 1:
 -This problem was occuring, because the destructor wasn't complete, I added "nxt = nullptr;" to the destructor and i called the destructor at the end of the main to deallocate the memory.
 
 Problem 2:
+-compiling the program with sanitize and running the code, I am able to see the memory that is still hanging in the heap after exit. 
+- theres an issue with the copy contructor. the copy constuctro leaves a dangling pointer.
+- I fixed the issue by changing the the copy constructor for allocate a new ptr array of v size and copied each value. Additionally I had to add "delete copy" at the bottom of the main because copy was never deallocated.
 
 
