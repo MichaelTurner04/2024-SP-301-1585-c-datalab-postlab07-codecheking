@@ -18,7 +18,10 @@ class Vector
     {
       sz = v.sz;
       max = v.max;
-      array = v.array;
+      array = new int[v.sz];
+      for(int i=0; i<v.sz; ++i){
+        array[i] = v.array[i];
+      }
     }
 
     // Destructor
@@ -82,7 +85,7 @@ int main()
   {
     cout << (*copy)[i] << endl;
   }
-
+  delete copy;
   return 0;
 }
 
