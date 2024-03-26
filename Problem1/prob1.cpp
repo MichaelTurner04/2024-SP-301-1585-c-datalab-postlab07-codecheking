@@ -34,6 +34,7 @@ class List
       if(nxt)
       {
         delete nxt;
+        nxt = nullptr;
       }
     }
 
@@ -116,6 +117,6 @@ int main()
   cout << "The list, doubled: " << endl;
   nums.extend(nums_copy);
   nums.print();
-
+  delete nums_copy;
   return 0;
 }
