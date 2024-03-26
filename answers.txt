@@ -1,4 +1,7 @@
-Problem 1:
+Problem 1: 
+-Memory leak is the issue with this code; At exit there is still 6    blocks in use. 1 block definitely lost and 5 blocks indirectly lost.
+
+-This problem was occuring, because the destructor wasn't complete, I added "nxt = nullptr;" to the destructor and i called the destructor at the end of the main to deallocate the memory.
 
 Problem 2:
 
